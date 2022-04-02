@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Real Time Tracker</title>
+    <meta charset="utf-8" />
+    <title>Add a default marker</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
@@ -13,15 +15,17 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="app">
-      <div class="control-panel">
-        <input type="text" id="target" placeholder="Search ..." />
-        <button class="btn" id="searchBtn" onclick="move()">Search</button>
-      </div>
-
-      <div class="map-container" id="map"></div>
+    <div class="map-container">
+      <div id="map"></div>
     </div>
 
+    <div class="map-overlay">
+      <label for="routeDrop" class="label">Route:</label>
+      <select name="routeDrop" id="target" class="txt">
+        <option value="" disabled selected>Select the route</option>
+      </select>
+      <button class="btn" id="loadBtn">Show Route</button>
+    </div>
     <script src="./mapanimation.js"></script>
   </body>
 </html>

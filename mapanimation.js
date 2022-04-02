@@ -8,27 +8,59 @@ const map = new mapboxgl.Map({
   zoom: 13,
 });
 
-let marker = new mapboxgl.Marker();
-marker.setLngLat([-71.092761, 42.357575]);
-marker.addTo(map);
+window.onload = () => {
+  addRoutes();
+};
+const drop = document.getElementById("target");
+const loadBtn = document.getElementById("loadBtn");
 
-const busStops = [
-  [-71.093729, 42.359244],
-  [-71.094915, 42.360175],
-  [-71.0958, 42.360698],
-  [-71.108717, 42.368355],
-  [-71.115476, 42.372085],
-  [-71.117585, 42.373016],
-  [-71.118625, 42.374863],
-];
+const getData = async () => {
+  const res = await fetch("https://api-v3.mbta.com/vehicles/");
+  const busData = await res.json();
+  return busData.data;
+};
 
-let counter = 0;
+const addRoutes = async () => {
+  const data = await getData();
+  const masterArr = [];
+  for (let i = 0; i < data.length; i++) {
+    masterArr.push(data[i].relationships.route.data.id);
+  }
+  const uniArr = [...new Set(masterArr)];
 
-const move = () => {
-  setTimeout(() => {
-    if (counter >= busStops.length) return;
-    marker.setLngLat(busStops[counter]);
-    counter++;
-    move();
-  }, 1000);
+  for (route of uniArr) {
+    const newOpt = document.createElement("option");
+    newOpt.value = route;
+    newOpt.innerText = route;
+    drop.appendChild(newOpt);
+  }
+};
+
+const filterData = async () => {
+  const route = document.getElementById("target").value;
+  const data = await getData();
+  const filterData = data.filter(
+    (dat) => dat.relationships.route.data.id === route
+  );
+  return filterData;
+};
+
+const resetMap = () => {};
+
+const getBuses = async () => {
+  const targetArr = await filterData();
+  for (let i = 0; i < targetArr.length; i++) {
+    let marker = new mapboxgl.Marker();
+    marker.setLngLat([
+      targetArr[i].attributes.longitude,
+      targetArr[i].attributes.latitude,
+    ]);
+    marker.addTo(map);
+  }
+};
+
+loadBtn.addEventListener("click", getBuses);
+
+const move = (data) => {
+  setTimeout(() => {}, 15000);
 };
