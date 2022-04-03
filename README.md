@@ -12,7 +12,7 @@ This app showcases the live location of the selected MBTA Route by using the MBT
 
 Simply download the zip folder with the source code file, or fork it into your github and clone it into your machine, and run it by using your favorite IDE.
 
-Link to GitHub Deployment: **[Real Time Bus Tracker]().**
+Link to GitHub Deployment: **[Real Time Bus Tracker](https://anthgrim.github.io/Real-Time-Tracker/).**
 
 ### Future Adds
 
