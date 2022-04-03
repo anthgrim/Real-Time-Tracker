@@ -27,7 +27,7 @@ MIT License
 
 ### Author
 
-Kevin Grimaldi
+Kevin Grimaldi.
 Student at MIT - Full Stack Development with MERN
 
 ### Credits
