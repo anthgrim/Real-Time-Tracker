@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Add a default marker</title>
+    <title>Real Time Tracker</title>
     <meta
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
@@ -12,6 +12,13 @@
       href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./bus.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -20,11 +27,13 @@
     </div>
 
     <div class="map-overlay">
-      <label for="routeDrop" class="label">Route:</label>
-      <select name="routeDrop" id="target" class="txt">
+      <label for="routeDrop" class="txt">Route:</label>
+      <select name="routeDrop" id="target" class="drop">
         <option value="" disabled selected>Select the route</option>
       </select>
-      <button class="btn" id="loadBtn">Show Route</button>
+      <button class="btn" id="loadBtn">Show Live</button>
+      <button class="btn stop" id="stopBtn">Stop Live</button>
+      <div class="txt" id="busesNumber"></div>
     </div>
     <script src="./mapanimation.js"></script>
   </body>

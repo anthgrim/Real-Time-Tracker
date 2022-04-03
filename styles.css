@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #343a40;
+  font-family: "Roboto Mono", monospace;
 }
 
 #map {
@@ -15,9 +16,9 @@ body {
   position: absolute;
   left: 0;
   padding: 10px;
-  width: 100%;
+  width: auto;
   height: auto;
-  background-color: rgba(17, 17, 17, 0.9);
+  background-color: rgba(17, 17, 17, 0.85);
   margin: 5px;
   text-align: center;
   border-radius: 10px;
@@ -28,15 +29,15 @@ body {
   height: 75%;
 }
 
-.txt {
+.drop {
   border: none;
   height: 20px;
-  width: 250px;
+  width: 175px;
   border-radius: 5px;
   text-align: center;
 }
 
-.label {
+.txt {
   margin-right: 10px;
   color: white;
 }
@@ -44,14 +45,31 @@ body {
 .btn {
   padding: 0px 10px;
   color: white;
-  background-color: #001d3d;
+  background-color: #227c9d;
   border: none;
   border-radius: 5px;
   width: auto;
   height: 25px;
   transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.stop {
+  background-color: #ef233c;
 }
 
 .btn:hover {
   transform: scale(1.05);
+}
+
+.marker {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+}
+
+div {
+  background-image: "./bus.png";
 }
