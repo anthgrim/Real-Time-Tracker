@@ -117,7 +117,7 @@ const getBuses = async () => {
       const width = marker.properties.iconSize[0];
       const height = marker.properties.iconSize[1];
       el.className = "marker";
-      el.style.backgroundImage = `url(bus.png)`;
+      el.style.backgroundImage = `url(images/bus.png)`;
       el.style.width = `${width}px`;
       el.style.height = `${height}px`;
       el.style.backgroundSize = "100%";
