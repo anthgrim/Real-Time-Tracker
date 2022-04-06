@@ -21,10 +21,6 @@ Link to GitHub Deployment: **[Real Time Bus Tracker](https://anthgrim.github.io/
 - Capability to choose ditferent transportation systems
 - Decrease the waiting time for the data to 10 seconds
 
-### License
-
-MIT License
-
 ### Author
 
 Kevin Grimaldi.
@@ -33,3 +29,7 @@ Student at MIT - Full Stack Development with MERN
 ### Credits
 
 Bus Icon taken from [Freepik.com](freepik.com)
+
+### License
+
+MIT License
