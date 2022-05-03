@@ -11,7 +11,7 @@ let timerId = null;
 
 //Mapbox Map load
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiYW50aGdyaW0iLCJhIjoiY2wxZjhsbjZ5MDEyMzNjbXB6ZmE4azhjdiJ9.RcmW0_4ba6kv9lKlFgL5Rg";
+  "pk.eyJ1IjoiYW50aGdyaW0iLCJhIjoiY2wycWc0N3J0MDBheDNkcGFpbTNwbGMxOSJ9.7ToD-LIaDeP-JHGj0-u0vQ";
 
 const map = new mapboxgl.Map({
   container: "map",
